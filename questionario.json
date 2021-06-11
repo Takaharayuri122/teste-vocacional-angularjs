@@ -1,0 +1,442 @@
+[
+  {
+    "id": 0,
+    "title": "Na escola, você prefere assuntos ligados à:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Arte, esportes e atividades extracurriculares"
+      },
+      {
+        "id": "b",
+        "text": "Biologia e genética"
+      },
+      {
+        "id": "c",
+        "text": "Ciências humanas, idiomas"
+      },
+      {
+        "id": "d",
+        "text": "Ciências exatas"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Você prefere levar sua vida:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Com pouca rotina e poucas regras"
+      },
+      {
+        "id": "b",
+        "text": "Com regras definidas e disciplina"
+      },
+      {
+        "id": "c",
+        "text": "Interagindo com todo tipo de pessoa"
+      },
+      {
+        "id": "d",
+        "text": "Com muita autonomia: “na sua”"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Você se descreveria como uma pessoa:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Impulsiva e um tanto aventureira"
+      },
+      {
+        "id": "b",
+        "text": "Cautelosa e responsável"
+      },
+      {
+        "id": "c",
+        "text": "Entusiasmada e muito amiga"
+      },
+      {
+        "id": "d",
+        "text": "Calma e diferente da maioria"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Você se considera uma pessoa:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prática e hábil para improvisar"
+      },
+      {
+        "id": "b",
+        "text": "Batalhadora, que sabe o que quer"
+      },
+      {
+        "id": "c",
+        "text": "Preocupada com questões humanas"
+      },
+      {
+        "id": "d",
+        "text": "Capacitada para criar e inventar"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "De quais características suas você sente orgulho:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Audácia e facilidade para lidar com o inesperado"
+      },
+      {
+        "id": "b",
+        "text": "Senso de dever e capacidade de dar exemplo"
+      },
+      {
+        "id": "c",
+        "text": "Idealismo e disposição para compreender os outros"
+      },
+      {
+        "id": "d",
+        "text": "Engenhosidade e rapidez mental"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Costuma confiar mais em:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Percepção imediata"
+      },
+      {
+        "id": "b",
+        "text": "Costumes e tradições"
+      },
+      {
+        "id": "c",
+        "text": "Intuição"
+      },
+      {
+        "id": "d",
+        "text": "Razão e lógica"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Quase sempre, você gosta de:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Causar impacto: os “holofotes” o atraem"
+      },
+      {
+        "id": "b",
+        "text": "Ser visto como membro valioso de um grupo"
+      },
+      {
+        "id": "c",
+        "text": "Sonhar em transformar o mundo"
+      },
+      {
+        "id": "d",
+        "text": "Desvendar um enigma ou inventar algo útil"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "A vida é mais interessante quando você tem:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Desafios, situações cambiantes"
+      },
+      {
+        "id": "b",
+        "text": "Segurança, emprego garantido, integração social"
+      },
+      {
+        "id": "c",
+        "text": "Possibilidade de fazer algo para mudar o mundo"
+      },
+      {
+        "id": "d",
+        "text": "Possibilidade de ir além do que já é conhecido"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Você gostaria de ser:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Um craque na profissão que escolher"
+      },
+      {
+        "id": "b",
+        "text": "Um executivo bem-sucedido"
+      },
+      {
+        "id": "c",
+        "text": "Um profissional de prestígio"
+      },
+      {
+        "id": "d",
+        "text": "Um especialista ou um cientista"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Você é muito bom lidando com:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ferramentas, instrumentos e equipamentos"
+      },
+      {
+        "id": "b",
+        "text": "Controle do tempo, comando e execução"
+      },
+      {
+        "id": "c",
+        "text": "Pessoas de todos os níveis sociais e culturais"
+      },
+      {
+        "id": "d",
+        "text": "Sistemas e construção (material ou mental)"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Antes de agir, você analisa:",
+    "options": [
+      {
+        "id": "a",
+        "text": "As vantagens imediatas"
+      },
+      {
+        "id": "b",
+        "text": "As experiências já vividas"
+      },
+      {
+        "id": "c",
+        "text": "As possibilidades futuras"
+      },
+      {
+        "id": "d",
+        "text": "As condições e consequências"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Gosta quando as pessoas:",
+    "options": [
+      {
+        "id": "a",
+        "text": "O surpreendem com um presente"
+      },
+      {
+        "id": "b",
+        "text": "Expressam gratidão por algo que fez"
+      },
+      {
+        "id": "c",
+        "text": "Reconhecem sua personalidade singular"
+      },
+      {
+        "id": "d",
+        "text": "Reconhecem sua inteligência"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Você costuma abraçar um novo projeto:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Com a cara e a coragem"
+      },
+      {
+        "id": "b",
+        "text": "Guiado pela experiência"
+      },
+      {
+        "id": "c",
+        "text": "Confiando na intuição e na criatividade"
+      },
+      {
+        "id": "d",
+        "text": "Depois de verificar todas as variáveis"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Geralmente, você prefere agir:",
+    "options": [
+      {
+        "id": "a",
+        "text": "No calor do momento"
+      },
+      {
+        "id": "b",
+        "text": "Com segurança e conforme o costume"
+      },
+      {
+        "id": "c",
+        "text": "Quando está inspirado"
+      },
+      {
+        "id": "d",
+        "text": "Quando um problema o desafia"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Você fica motivado quando:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tem a oportunidade de superar obstáculos"
+      },
+      {
+        "id": "b",
+        "text": "Experimenta estabilidade na vida profissional, ou  seja, sabe em que terreno está pisando"
+      },
+      {
+        "id": "c",
+        "text": "Harmonia e inspiração guiam a atividade"
+      },
+      {
+        "id": "d",
+        "text": "Há liberdade para projetar o futuro"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Em atividades em grupo, você prefere:",
+    "options": [
+      {
+        "id": "a",
+        "text": "As desafiadoras, que exigem ação rápida"
+      },
+      {
+        "id": "b",
+        "text": "Administrar os recursos disponíveis"
+      },
+      {
+        "id": "c",
+        "text": "Motivar as pessoas para darem o melhor de si"
+      },
+      {
+        "id": "d",
+        "text": "Descartar logo o que não funciona"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Liderar é uma atividade que gosta de exercer:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Por pouco tempo e dependendo da situação"
+      },
+      {
+        "id": "b",
+        "text": "Quando pode comandar do começo ao fim"
+      },
+      {
+        "id": "c",
+        "text": "Quando é preciso identificar e reunir talentos"
+      },
+      {
+        "id": "d",
+        "text": "Quando o raciocínio estratégico é necessário"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Em uma escola, você gostaria de ser:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Professor de educação física"
+      },
+      {
+        "id": "b",
+        "text": "Diretor"
+      },
+      {
+        "id": "c",
+        "text": "Professor de literatura"
+      },
+      {
+        "id": "d",
+        "text": "Professor de matemática ou física"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "É um elogio quando se referem a você como:",
+    "options": [
+      {
+        "id": "a",
+        "text": "Corajoso, otimista e divertido"
+      },
+      {
+        "id": "b",
+        "text": "Cauteloso, responsável e aplicado"
+      },
+      {
+        "id": "c",
+        "text": "Harmonizador, íntegro e sábio"
+      },
+      {
+        "id": "d",
+        "text": "Uma mente brilhante"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Frase que têm a ver com você:",
+    "options": [
+      {
+        "id": "a",
+        "text": "“Deixo a vida me levar...”"
+      },
+      {
+        "id": "b",
+        "text": "“Manda quem pode; obedece quem tem juízo”"
+      },
+      {
+        "id": "c",
+        "text": "“Para seu próprio interesse, seja verdadeiro”"
+      },
+      {
+        "id": "d",
+        "text": "“Penso, logo existo”"
+      }
+    ]
+  }
+]

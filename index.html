@@ -65,6 +65,7 @@
   .selected-option {
     background-color: var(--primary-color);
     transform: scale(1.08);
+    animation: pulse 1s infinite;
 
   }
 
@@ -77,40 +78,312 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
   }
+
+  .pontuation-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    font-size: 2rem;
+  }
+
+  .pontuation-content {
+    padding: 15px;
+    background-color: #f24a4a2e;
+    font-weight: 700;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      /* box-shadow: 0 0 0 0 rgba(107, 2, 2, 0.7); */
+    }
+
+    70% {
+      transform: scale(1.08);
+      /* box-shadow: 0 0 0 10px rgba(123, 3, 3, 0); */
+    }
+
+    100% {
+      transform: scale(0.95);
+      /* box-shadow: 0 0 0 0 rgba(116, 2, 2, 0); */
+    }
+  }
 </style>
 
 <body ng-app="app">
   <form ng-controller="MainController">
 
     <div class="row container mx-auto mt-5">
-      <div class="col-6 mx-auto">
+      <div class="col-md-6 mx-auto">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" ng-if="questionPosition < 19">
             <div class="row px-4" ng-repeat="item in questions track by $index">
               <div class="col-12" ng-if="item.id == questionPosition">
-                <h3 class="future-title">{{ item.title }}</h3>
+                <h3 class="future-title">{{item.id + 1}} - {{ item.title }}</h3>
 
                 <div class="future-radio-container">
-                  <div class="future-radio-option" ng-class="{'selected-option': (selectedOptionId == option.option)}" ng-repeat="option in item.options" ng-click="onSelectOption(item, option, item.id)">
+                  <div class="future-radio-option" ng-class="{'selected-option': ( entity[item.id].option == option.id )}" ng-repeat="option in item.options" >
                     <label class="radio">
                       <span class="radio-input">
-                        <input type="radio" name="radio" ng-model="selectedOptions[item.id].option.id" ng-true-value="option.id" />
+                        <input type="radio" ng-model="entity[item.id].option" ng-value="option.id" ng-change="onSelectOption(item, option)" name="radio" />
                         <span class="radio-control"></span>
                       </span>
-                      <span class="radio-label">{{ option.text }}</code></span>
+                      <span class="radio-label">{{ option.id }}) {{ option.text }}</code></span>
                     </label>
                   </div>
                 </div>
 
                 <div class="d-flex justify-content-between">
                   <button class="btn btn-default btn-outline" ng-disabled="questionPosition == 0" ng-click="onPreviuosPage()">Voltar</button>
-                  <button class="btn btn-danger btn-future" ng-disabled="selectedOptions.length == 0" ng-click="onNextPage()">Continuar</button>
+                  <button class="btn btn-danger btn-future" ng-disabled="!entity[item.id].option" ng-click="onNextPage()">Continuar</button>
                 </div>
 
-                <code>{{ selectedOptions.lenght | json }}</code>
               </div>
             </div>
           </div>
+
+          <div class="card-body" ng-if="questionPosition == 19 && screen == 'pontuation'">
+            <div class="row px-4">
+              <div class="col-12 text-center">
+                <h3 class="future-title ">TOTAL</h3>
+              </div>
+              <div class="col-3  mx-0 px-0 d-flex flex-column text-center">
+                <b class="pontuation-header">A</b>
+                <h3 class="pontuation-content">{{_a.length}}</h3>
+              </div>
+
+              <div class="col-3 mx-0 px-0 d-flex flex-column text-center">
+                <b class="pontuation-header">B</b>
+                <h3 class="pontuation-content">{{_b.length}}</h3>
+              </div>
+
+              <div class="col-3  mx-0 px-0 d-flex flex-column text-center">
+                <b class="pontuation-header">C</b>
+                <h3 class="pontuation-content">{{_c.length}}</h3>
+              </div>
+
+              <div class="col-3  mx-0 px-0 d-flex flex-column text-center">
+                <b class="pontuation-header">D</b>
+                <h3 class="pontuation-content">{{_d.length}}</h3>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-danger btn-future" ng-click="getPontuation()">Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'a'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Maior pontuação em A</h3>
+                <p>
+                  A principal característica dos tipos A é o  movimento. Gostam de novidade. Apresentam  destreza física e boa expressão corporal. Se forem  mais propensos ao raciocínio lógico, terão mais  êxito em profissões que requeiram precisão e  acuidade. Se forem mais inclinados ao sentimento  e à emoção, as profissões relacionadas ao trato  com pessoas são as mais indicadas. Pessoas do tipo  A não gostam de rotina e veem o trabalho como  uma grande fonte de prazer.
+                </p>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-danger btn-future" ng-click="nextScreen('a_1')">Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'a_1'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Carreiras mais apropriadas</h3>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Esportista</li>
+                  <li>Anestesista</li>
+                  <li>Artista plástico</li>
+                  <li>Ator</li>
+                  <li>Chef de cozinha </li>
+                  <li>Cirurgião</li>
+                  <li>Coreógrafo</li>
+                  <li>Dançarino</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Dermatologista</li>
+                  <li>Estilista</li>
+                  <li>Fotógrafo</li>
+                  <li>Guia de turismo</li>
+                  <li>Instrumentador cirúrgico</li>
+                  <li>Instrutor de voo</li>
+                  <li>Médico clínico</li>
+                  <li>Paisagista</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li>Músico</li>
+                  <li>Personal trainer</li>
+                  <li>Personal stylist</li>
+                  <li>Piloto</li>
+                  <li>Publicitário</li>
+                  <li>Relações públicas</li>
+                  <li>roteirista</li>
+                </ul>
+              </div>
+
+              
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'b'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Maior pontuação em B</h3>
+                <p>
+                  Comando e responsabilidade são duas  palavras que definem as pessoas do tipo B.  Elas gostam de lidar com fatos, quantidades,  análises, organização e planejamento.  Trabalham duro e preferem profissões que  lhes proporcionem status e possibilidade de  crescimento. São as mais presentes no  mundo corporativo.
+
+                </p>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-danger btn-future" ng-click="nextScreen('b_1')">Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'b_1'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Carreiras mais apropriadas</h3>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Administrador de  empresas</li>
+                  <li>Advogado</li>
+                  <li>Assistente social</li>
+                  <li>Bibliotecário</li>
+                  <li>Delegado</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Engenheiro  mecânico/químico</li>
+                  <li>Juiz de direito</li>
+                  <li>Fotógrafo</li>
+                  <li>Pator/padre/rabino</li>
+                  <li>Policial</li>
+                  <li>Instrutor de voo</li>
+                  <li>Médico clínico</li>
+                  <li>Promotor público</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'c'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Maior pontuação em C</h3>
+                <p>
+                  Facilmente reconhecíveis por seu entusiasmo e  interesse nas relações humanas, as pessoas do tipo  C têm na intuição o seu ponto forte. Muitas  endereçam seu esforço e talento para o  desenvolvimento intelectual de alunos e discípulos  e o conforto psicológicos de pacientes e colegas de  trabalho. No grupo C, estão as personalidades mais  laureadas com o Nobel da Paz e de literatura.
+
+                </p>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-danger btn-future" ng-click="nextScreen('c_1')">Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'c_1'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Carreiras mais apropriadas</h3>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Artista plástico</li>
+                  <li>Dramaturgo</li>
+                  <li>Educador</li>
+                  <li>Escritor</li>
+                  <li>Filósofo</li>
+                  <li>Jornalista</li>
+                  <li>Pedagogo</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Professor</li>
+                  <li>Psicólogo</li>
+                  <li>Psiquiatra</li>
+                  <li>Sociólogo</li>
+                  <li>Terapeuta ocupacional</li>
+                  <li>Tradutor</li>
+                  <li>Economista</li>
+                  <li>Líder de uma corporação</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'd'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Maior pontuação em D</h3>
+                <p>
+                  São intuitivos como os C, mas, em vez de se  preocupar com pessoas, costumam focar  seus interesses em grandes áreas do  conhecimento, como ciência e tecnologia.  Apresentam notável capacidade para  identificar problemas concretos e resolvê-los, bem como para o raciocínio abstrato.
+
+                </p>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex justify-content-end">
+                  <button class="btn btn-danger btn-future" ng-click="nextScreen('d_1')">Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body" ng-if="screen == 'd_1'">
+            <div class="row px-4">
+              <div class="col-12">
+                <h3 class="future-title text-center">Carreiras mais apropriadas</h3>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Analista de sistemas</li>
+                  <li>Antropólogo</li>
+                  <li>Arquiteto</li>
+                  <li>Astrônomo</li>
+                  <li>Criador de software</li>
+                  <li>Designer industrial</li>
+                  <li>Engenheiro</li>
+                  <li>Físico</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>Matemático</li>
+                  <li>Militar</li>
+                  <li>Oceanógrafo</li>
+                  <li>Pesquisador</li>
+                  <li>Químico</li>
+                  <li>Músico (regente)</li>
+                  <li>Urbanista</li>
+                  <li>Zoólogo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
